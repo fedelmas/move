@@ -1,0 +1,150 @@
+ion-content {
+    --ion-background-color: #FAFAFA;
+    background-size: 260px 90px;
+}
+
+.form-rota {
+    height: 45px;
+}
+
+.form-item-fixed {
+    color: #8C8C8C;
+    position: fixed;
+    padding-top: 14px;
+    height: 45px;
+}
+
+.form-item-input {
+    width: 100%;
+    height: 100%;
+    background-color: #eee;
+    border: none;
+    border-radius: 5px;
+    padding-left: 65px;
+    padding-right: 15px;
+}
+
+input:focus {
+    background: #E2E2E2;
+    outline: 0;
+}
+
+.btn-buscar {
+    position: absolute;
+    width: 86%;
+    left: 7%;
+    bottom: 3vh;
+    height: 40px;
+    border-radius: 30px;
+    z-index: 9;
+}
+
+.tit {
+    color: #8C8C8C;
+    font-size: 1em;
+    margin: 35px 0 20px 0
+}
+
+.autocomplete-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-items: center
+}
+
+.autocomplete-item .circle-icon {
+    border-radius: 50%;
+    background: #eee;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    margin-right: 10px
+}
+
+.autocomplete-item ion-icon {
+    color: #fff;
+    font-size: 1.3em;
+    float: left
+}
+
+.autocomplete-item h3 {
+    color: grey;
+    font-size: 1em
+}
+
+.ion-data {
+    margin-top: -41px;
+    margin-left: 50px
+}
+
+.m-b-5 {
+    margin-bottom: 5px
+}
+
+.m-b-10 {
+    margin-bottom: 10px
+}
+
+.m-b-10 {
+    margin-bottom: 10px
+}
+
+.m-b-30 {
+    margin-bottom: 30px
+}
+
+.w80 {
+    width: 80%
+}
+
+.topo-logo {
+    width: 105px;
+    margin: 10px 25px 0 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 9
+}
+
+.topo-bg {
+    position: fixed;
+    top: -5px;
+    right: 0;
+    z-index: 9
+}
+
+.p-0-5-0-0 {
+    padding: 0 5px 0 0
+}
+
+.p-0-0-0-5 {
+    padding: 0 0 0 5px
+}
+
+.fab-vertical-bottom {
+    bottom: 10%;
+    right: 7%;
+}
+
+.counting {
+    background: #008147;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    width: 23px;
+    height: 23px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    right: -38px;
+    bottom: -18px;
+    z-index: 99;
+    font-size: 0.8em;
+}

@@ -1,0 +1,50 @@
+<ion-content>
+    <!-- <input *ngIf=" rotaAceita == false" class="search" ngx-google-places-autocomplete [options]='options' #placesRef="ngx-places" (onAddressChange)="setDestination($event)"/> -->
+
+    <!-- MAP -->
+    <div #mapMove class="map"></div>
+    <!-- CARD -->
+    <ion-card class="card">
+        <!-- [ngClass]="{'tipo1': tipoID === 1, 'tipo2': tipoID === 2, 'tipo3': tipoID === 3}" -->
+        <!-- <div class="card-img tipo{{ tipoID }}"> -->
+        <ion-row class="card-img" d-flex align-items-center>
+            <ion-col>
+                <a href="./rota">
+                    <ion-icon class="ico-back" ios="md-arrow-back" md="md-arrow-back"></ion-icon>
+                </a>
+            </ion-col>
+            <ion-col class="titulo">
+
+                <h2><img class="icon-transporte" src="../../../assets/img/transportes/{{tipoID}}.svg"> {{cardTitulo | uppercase}}</h2>
+            </ion-col>
+
+        </ion-row>
+        <ion-card-content>
+            <ion-row *ngFor="let item of configuraTrans" d-flex align-items-center>
+                <ng-container *ngIf="item.label !== 'Data'; else default">
+                    <span class="label">{{item.label}}</span><span class="field">{{item.content}}</span>
+                </ng-container>
+                <ng-template #default>
+                    <span class="label">{{item.label}}</span><span class="field">{{item.content | date: 'dd/MM/yyyy'}}</span>
+                </ng-template>
+            </ion-row>
+            <!-- exibe proximo horario da rota fixa se houver  -->
+            <ion-row *ngIf="tipoID === 2 && proximoHorario.hora != undefined" d-flex align-items-center>
+                <span class="label">Hora</span><span class="field">{{proximoHorario.hora}}</span>
+            </ion-row>
+            <ion-row *ngIf="tipoID === 2 && proximoHorario.hora == undefined" d-flex align-items-center>
+                <span class="label">Hora</span><span class="field">{{proximoHorario}}</span>
+            </ion-row>
+
+            <!-- Btn horarios -->
+            <div *ngIf="tipoID === 2" class="horarios-rotafixa row">
+                <ion-button (click)="consultarHorarios()" class="btn-horarios" color="medium">+ HORÁRIOS</ion-button>
+            </div>
+
+            <ion-button color="primary" expand="block" shape="round" (click)="confirmarCorrida()" class="btn-confirmar">Confirmar</ion-button>
+
+        </ion-card-content>
+    </ion-card>
+
+    <!--<ion-button [hidden]="!rotaAceita == true"  href="./map" class="cancel" color="danger">Cancelar</ion-button> -->
+</ion-content>

@@ -1,0 +1,72 @@
+<ion-content class="ion-padding">
+
+    <img class="topo-bg" src="../../../assets/img/topo-bg.svg">
+    <img class="topo-logo" src="../../../assets/img/Petrobras.png">
+
+    <ion-list [formGroup]="searchInputs" class="ion-margin ion-padding-top">
+        <!-- INPUT EMBARQUE -->
+        <div class="form-rota m-b-10">
+            <div class="form-item-fixed ion-padding-start">De</div>
+            <input type="text" ngx-google-places-autocomplete formControlName="origem" placeholder="Embarque" #embarqueRota (onAddressChange)="setOrigemAddress($event)" class="form-item-input" placeholder="{{userAddress}}">
+        </div>
+
+        <!-- INPUT DESTINO -->
+        <div class="form-rota m-b-10">
+            <div class="form-item-fixed ion-padding-start m-b-8">Para</div>
+            <input type="text" formControlName="destino" placeholder="Destino" ngx-google-places-autocomplete (onAddressChange)="setDestinoAddress($event)" class="form-item-input" value="{ {nomeDestino}}">
+        </div>
+
+        <!-- DATA E HORA -->
+        <ion-row>
+            <ion-col class="p-0-5-0-0">
+                <div class="form-rota">
+                    <div class="form-item-fixed ion-padding-start">Data</div>
+                    <input class="form-item-input">
+                </div>
+                <ion-datetime displayFormat="DD/MM/YYYY" (ionChange)="getSelectedDate($event)" placeholder="{{today | date: 'dd/MM/yyyy'}}" class="ion-data m-b-30"></ion-datetime>
+            </ion-col>
+            <ion-col class="p-0-0-0-5">
+                <div class="form-rota ">
+                    <div class="form-item-fixed ion-padding-start">Hora</div>
+                    <input class="form-item-input">
+                </div>
+                <ion-datetime displayFormat="HH:mm" (ionChange)="getSelectedTime($event)" placeholder="{{today | date: 'HH:mm'}}" class="ion-data m-b-30"></ion-datetime>
+            </ion-col>
+        </ion-row>
+        <!-- <h3 class="tit">Sugestões</h3> -->
+
+        <!-- AUTOCOMPLETE EMBARQUE -->
+        <div class="autocomplete-item m-b-10" *ngFor="let origem of minhaOrigem">
+            <div class="circle-icon">
+                <ion-icon name="pin"></ion-icon>
+            </div>
+            <a class="w80" (click)="setOrigemRotaNome(origem)">
+                <h3>{{origem.origem.nome}}</h3>
+            </a>
+        </div>
+
+        <!-- AUTOCOMPLETE DESTINO -->
+        <div class="autocomplete-item m-b-10 m-t-30" *ngFor="let destino of meuDestino">
+            <div class="circle-icon">
+                <ion-icon name="pin"></ion-icon>
+            </div>
+            <a class="w80" (click)="setDestinoRotaNome(destino)">
+                <h3>{{destino.destino.nome}}</h3>
+            </a>
+        </div>
+    </ion-list>
+
+</ion-content>
+
+<!-- FAB BTN -->
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <!-- <div *ngIf="viagens.lenght === 0 || undefined" class="counting">0</div> -->
+    <div class="counting">{{qtdViagens}}</div>
+    <ion-fab-button (click)="goHistorico()" color="light">
+        <ion-icon name="today"></ion-icon>
+    </ion-fab-button>
+</ion-fab>
+
+<ion-footer>
+    <ion-button [disabled]="searchInputs.invalid" class="btn-buscar" (click)="sendRotaForMap()" shape="round">BUSCAR</ion-button>
+</ion-footer>

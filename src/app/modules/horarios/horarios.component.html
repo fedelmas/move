@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-toolbar class="toolbar">
+        <a class="ion-margin ion-padding" (click)="voltarMapa()">
+            <ion-icon class="ico-back ion-margin-top" ios="md-arrow-back" md="md-arrow-back"></ion-icon>
+        </a>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding-start ion-margin-start">
+    <div class="ion-margin-start"></div>
+
+    <!-- Horários -->
+    <div class="horarios" *ngFor="let horario of horarios">
+
+        <div class="horarios-item" *ngIf="horario.hora == proximoHorario.hora" class="horarios-item-active">
+            <ion-icon class="ico-clock" ios="ios-alarm" md="md-alarm"></ion-icon>
+            <span>{{horario.hora}}</span>
+        </div>
+
+        <div class="horarios-item" *ngIf="horario.hora !== proximoHorario.hora || proximoHorario.hora == undefined">
+            <ion-icon class="ico-clock" ios="ios-alarm" md="md-alarm"></ion-icon>
+            <span>{{horario.hora}}</span>
+        </div>
+    </div>
+</ion-content>

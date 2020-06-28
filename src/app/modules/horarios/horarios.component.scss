@@ -1,0 +1,41 @@
+.ico-back {
+    font-size: 2.3em;
+    color: #787878
+}
+
+.ico-clock {
+    font-size: 1.3em;
+    margin-left: 10px
+}
+
+.horarios {
+    margin-top: 30px
+}
+
+.horarios-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    color: #787878;
+    margin-top: 20px
+}
+
+.horarios span {
+    font-size: 1.3em;
+    padding-left: 15px;
+}
+
+.horarios-item-active {
+    background: #F2F2F2;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    color: #787878;
+    margin-top: 20px;
+    padding: 10px 5px;
+    width: 170px;
+}
+
+.toolbar {
+    --border-width: 0 !important
+}

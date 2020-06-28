@@ -1,0 +1,40 @@
+<ion-content padding class="animated fadeIn login auth-page">
+  <div class="login-content">
+  
+    <!-- Logo -->
+    <div padding-horizontal text-center class="animated fadeInDown">
+      <div class="logo ion-margin">
+        <img class="logo-img ion-margin ion-padding-bottom" src="../../../assets/img/move_logo.png">
+      </div>
+      <ion-text color="primary" class="title ion-margin ion-padding-top ion-padding-bottom">
+        Login
+      </ion-text>
+    </div>
+
+    <!-- Login form -->
+    <form class="list-form ion-margin ion-padding-top ion-padding-bottom" [formGroup]="userLoginForm">
+      <ion-item class="ion-padding-top">
+        <ion-input placeholder="Email" text-center type="login" formControlName="login"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input placeholder="password" text-center type="password" formControlName="senha"></ion-input>
+      </ion-item>
+    </form>
+
+    <!-- Submit -->
+    <ion-row justify-content-center class="ion-margin ion-padding-top ion-padding-bottom">
+      <ion-button  [disabled]="userLoginForm.invalid" color="primary" expand="block" shape="round" type="submit" (click)="submitForm()" class="btn-entrar ion-margin ion-padding-top ion-padding-bottom">Entrar</ion-button>
+    </ion-row>
+
+    <!-- Esqueci senha -->
+    <ion-row justify-content-center>
+      <ion-text color="primary" justify-content-center>
+          Esqueci minha senha
+      </ion-text>
+    </ion-row>
+
+
+  </div>
+</ion-content>
+  

@@ -1,0 +1,70 @@
+    .map {
+        height: 100%;
+    }
+    
+    .label {
+        color: #A4A4A4;
+        line-height: 1.5em;
+        font-size: 1em;
+        font-weight: 100;
+        width: 20%;
+    }
+    
+    .field {
+        color: #707070;
+        margin-left: 10px;
+        font-size: 1.05em;
+        white-space: pre;
+        width: 75%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    
+    .card {
+        position: absolute;
+        bottom: -10px;
+        width: 92%;
+        margin-left: 4%;
+        background: #fff
+    }
+    
+    .card-img {
+        height: 60px;
+    }
+    
+    .ico-back {
+        font-size: 3em;
+        color: #707070;
+        margin: 10px 0 0 15px;
+    }
+    
+    .titulo h2 {
+        color: #707070;
+        font-size: 1.5em;
+    }
+    
+    .btn-horarios {
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        font-size: 0.57em;
+        height: 22px;
+    }
+    
+    .horarios-rotafixa {
+        float: right;
+        margin-top: -27px
+    }
+    
+    .icon-transporte {
+        width: 12%;
+        display: inline-block;
+        color: #707070;
+        margin-bottom: -1px;
+    }
+    
+    .btn-confirmar {
+        margin: 20px 0 0 0;
+        padding: 2px 0;
+    }
