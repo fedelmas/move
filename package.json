@@ -39,7 +39,7 @@
     "cordova-plugin-geolocation": "4.0.1",
     "core-js": "^2.5.4",
     "lodash": "^4.17.14",
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "ngx-google-places-autocomplete": "^2.0.4",
     "ngx-loading": "^3.0.1",
     "rxjs": "~6.5.1",
